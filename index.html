@@ -14,7 +14,7 @@
       <button class="icon-btn" id="backBtn" onclick="goBack()" style="display:none;">
         <i class="ti ti-arrow-left"></i>
       </button>
-      <div class="menu-wrap" id="menuWrap">
+      
         <button class="menu-btn" id="menuBtn"><i class="ti ti-dots"></i></button>
         <div class="dropdown" id="dropdown">
           <a href="#" onclick="showPage('home');return false;"><i class="ti ti-home"></i> Home</a>
@@ -22,9 +22,9 @@
           <a href="#" onclick="showPage('sell');return false;"><i class="ti ti-tag"></i> Sell</a>
         </div>
       </div>
-      <img src="avatar.jpg" class="nav-avatar" onclick="showPage('home')" alt="SPI ANTOOR">
+      
     </div>
-    <div class="logo" onclick="showPage('home')">SPI ANTOOR</div>
+    <div class="logo" onclick="showPage('home')">SPI ANTOOR</div><div class="auth-links"><button onclick="openAuth('login')">Login</button><button onclick="openAuth('signup')">Sign Up</button></div>
     <div class="nav-right">
       <button class="icon-btn" onclick="openSearch()"><i class="ti ti-search"></i></button>
       <button class="icon-btn cart-btn" onclick="showPage('cart')">
@@ -75,7 +75,7 @@
     <div class="strip">
       <div class="feat scroll-reveal" style="--d:0s"><i class="ti ti-truck"></i><div><p>Fast Delivery</p><small>All over Bangladesh</small></div></div>
       <div class="feat scroll-reveal" style="--d:0.1s"><i class="ti ti-shield-check"></i><div><p>100% Genuine</p><small>Quality assured</small></div></div>
-      <div class="feat scroll-reveal" style="--d:0.2s"><i class="ti ti-refresh"></i><div><p>Easy Returns</p><small>7-day policy</small></div></div>
+      <div class="feat scroll-reveal" style="--d:0.2s"><i class="ti ti-refresh"></i><div><p>Easy Returns</p><small>3 Days Return</small><small>7-day policy</small></div></div>
       <div class="feat scroll-reveal" style="--d:0.3s"><i class="ti ti-headset"></i><div><p>24/7 Support</p><small>Always here</small></div></div>
     </div>
   </div>
@@ -258,5 +258,15 @@
   </footer>
 
   <script src="script.js"></script>
+
+<div id="authModal" class="auth-modal" style="display:none">
+<div class="auth-box">
+<h3 id="authTitle">Login</h3>
+<input id="authUser" placeholder="Email or Phone">
+<input id="authPass" type="password" placeholder="Strong Password">
+<button onclick="submitAuth()">Continue</button>
+<button onclick="googleLogin()">Google Login</button>
+</div></div>
+
 </body>
 </html>

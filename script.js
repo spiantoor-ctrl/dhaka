@@ -315,3 +315,18 @@ initReveal();
 const style = document.createElement('style');
 style.textContent = '@keyframes shake{0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-6px);}40%,80%{transform:translateX(6px);}}';
 document.head.appendChild(style);
+
+let isLoggedIn=false,authMode='login';
+function openAuth(m){authMode=m;document.getElementById('authTitle').innerText=m==='login'?'Login':'Sign Up';document.getElementById('authModal').style.display='block';}
+function submitAuth(){
+ const u=document.getElementById('authUser').value;
+ const p=document.getElementById('authPass').value;
+ if(authMode==='signup' && p.length<8){alert('Use a strong password (8+ chars)');return;}
+ isLoggedIn=true;document.getElementById('authModal').style.display='none';alert('Logged in');
+}
+function googleLogin(){isLoggedIn=true;document.getElementById('authModal').style.display='none';alert('Google login placeholder');}
+const oldShowPage=showPage;
+showPage=function(id){
+ if((id==='sell'||id==='cart')&&!isLoggedIn){openAuth('login');return;}
+ oldShowPage(id);
+}

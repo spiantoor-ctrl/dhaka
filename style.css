@@ -233,3 +233,7 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#1a1a1a;backg
   .hero h1{font-size:26px;}
   .product-actions{flex-direction:column;}
 }
+
+.auth-links button{margin-left:6px;padding:6px 10px}
+.auth-modal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999}
+.auth-box{background:#fff;max-width:320px;margin:100px auto;padding:20px;border-radius:12px;display:flex;flex-direction:column;gap:10px}
