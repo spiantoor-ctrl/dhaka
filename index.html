@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dhaka Threads</title>
+  <title>SPI ANTOOR</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 <body>
 
+  <!-- NAV -->
   <nav class="nav">
     <div class="menu-wrap">
       <button class="menu-btn" id="menuBtn" aria-label="Menu">
         <i class="ti ti-dots"></i>
       </button>
       <div class="dropdown" id="dropdown">
-        <a href="#"><i class="ti ti-home"></i> Home</a>
-        <a href="#"><i class="ti ti-shopping-bag"></i> Buy</a>
-        <a href="#"><i class="ti ti-tag"></i> Sell</a>
+        <a href="#home"><i class="ti ti-home"></i> Home</a>
+        <a href="#buy"><i class="ti ti-shopping-bag"></i> Buy</a>
+        <a href="#sell"><i class="ti ti-tag"></i> Sell</a>
       </div>
     </div>
-    <div class="logo">DHAKA THREADS</div>
+    <div class="logo">SPI ANTOOR</div>
     <div class="nav-right">
       <button class="icon-btn"><i class="ti ti-search"></i></button>
-      <button class="icon-btn"><i class="ti ti-heart"></i></button>
       <button class="icon-btn cart-btn">
         <i class="ti ti-shopping-cart"></i>
         <span class="cart-dot"></span>
@@ -31,91 +31,238 @@
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="badge">NEW COLLECTION 2024</div>
-    <h1>Style That Speaks<br>For Itself</h1>
-    <p>Premium clothing for every occasion.<br>Crafted with care, designed for you.</p>
-    <div class="hero-btns">
-      <button class="btn-primary">Shop Now</button>
-      <button class="btn-outline">View Lookbook</button>
-    </div>
-  </section>
+  <!-- HOME PAGE -->
+  <div id="home" class="page active">
 
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title">Shop by category</h2>
-      <a href="#" class="see-all">See all →</a>
-    </div>
-    <div class="cats">
-      <div class="cat"><i class="ti ti-shirt"></i><p>Shirts</p><small>42 items</small></div>
-      <div class="cat"><i class="ti ti-hanger"></i><p>Dresses</p><small>38 items</small></div>
-      <div class="cat"><i class="ti ti-jacket"></i><p>Jackets</p><small>25 items</small></div>
-      <div class="cat"><i class="ti ti-run"></i><p>Casual</p><small>60 items</small></div>
+    <!-- Hero with shop image -->
+    <div class="hero" style="background-image: url('shop-bg.png');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="badge">CLOTHING & FASHION</div>
+        <h1>Welcome to<br>SPI ANTOOR</h1>
+        <p>Premium fashion from Rangpur.<br>Quality you can trust.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showPage('buy')">Shop Now</button>
+          <button class="btn-outline" onclick="showPage('sell')">Sell with Us</button>
+        </div>
+      </div>
     </div>
 
-    <div class="section-header">
-      <h2 class="section-title">Featured picks</h2>
-      <a href="#" class="see-all">See all →</a>
-    </div>
-    <div class="products">
-      <div class="pcard">
-        <div class="pimg" style="background:#f5f0eb;">👔</div>
-        <div class="pinfo">
-          <div class="ptag">MEN'S</div>
-          <div class="pname">Classic Formal Shirt</div>
-          <div class="prow">
-            <span class="pprice">৳ 1,200</span>
-            <button class="pbuy">Add</button>
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="about-card">
+        <div class="about-avatar">
+          <i class="ti ti-user-circle" style="font-size:64px; color:#888;"></i>
+        </div>
+        <div class="about-info">
+          <h2>SPI ANTOOR</h2>
+          <p class="about-location"><i class="ti ti-map-pin"></i> Rangpur, Bangladesh</p>
+          <p class="about-desc">Fashion enthusiast & trusted seller from Rangpur. Bringing you the best clothing & fashion products with guaranteed quality and fast delivery.</p>
+          <div class="contact-row">
+            <a href="https://wa.me/8801704310629" class="contact-btn whatsapp" target="_blank">
+              <i class="ti ti-brand-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:spiantoor@gmail.com" class="contact-btn gmail">
+              <i class="ti ti-mail"></i> Gmail
+            </a>
           </div>
         </div>
       </div>
-      <div class="pcard">
-        <div class="pimg" style="background:#f0ebf5;">👗</div>
-        <div class="pinfo">
-          <div class="ptag">WOMEN'S</div>
-          <div class="pname">Summer Dress</div>
-          <div class="prow">
-            <span class="pprice">৳ 1,800</span>
-            <button class="pbuy">Add</button>
-          </div>
-        </div>
-      </div>
-      <div class="pcard">
-        <div class="pimg" style="background:#ebf0f5;">🧥</div>
-        <div class="pinfo">
-          <div class="ptag">UNISEX</div>
-          <div class="pname">Winter Jacket</div>
-          <div class="prow">
-            <span class="pprice">৳ 3,500</span>
-            <button class="pbuy">Add</button>
-          </div>
-        </div>
-      </div>
-      <div class="pcard">
-        <div class="pimg" style="background:#ebf5eb;">👖</div>
-        <div class="pinfo">
-          <div class="ptag">MEN'S</div>
-          <div class="pname">Slim Fit Jeans</div>
-          <div class="prow">
-            <span class="pprice">৳ 2,200</span>
-            <button class="pbuy">Add</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="strip">
-    <div class="feat"><i class="ti ti-truck"></i><div><p>Free delivery</p><small>Orders above ৳2,000</small></div></div>
-    <div class="feat"><i class="ti ti-refresh"></i><div><p>Easy returns</p><small>7-day policy</small></div></div>
-    <div class="feat"><i class="ti ti-shield-check"></i><div><p>100% genuine</p><small>Premium fabric</small></div></div>
-    <div class="feat"><i class="ti ti-headset"></i><div><p>24/7 support</p><small>Always here</small></div></div>
+    <!-- Features -->
+    <div class="strip">
+      <div class="feat"><i class="ti ti-truck"></i><div><p>Fast Delivery</p><small>All over Bangladesh</small></div></div>
+      <div class="feat"><i class="ti ti-shield-check"></i><div><p>100% Genuine</p><small>Quality assured</small></div></div>
+      <div class="feat"><i class="ti ti-refresh"></i><div><p>Easy Returns</p><small>7-day policy</small></div></div>
+      <div class="feat"><i class="ti ti-headset"></i><div><p>24/7 Support</p><small>Always here</small></div></div>
+    </div>
+
+  </div>
+
+  <!-- BUY PAGE -->
+  <div id="buy" class="page">
+    <div class="page-header">
+      <h2>Browse Products</h2>
+      <p>Find your perfect style</p>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <h3 class="section-title">All Products</h3>
+        <span class="see-all">4 items</span>
+      </div>
+      <div class="products" id="productGrid">
+        <div class="pcard" onclick="showProduct('shirt')">
+          <div class="pimg" style="background:#f5f0eb;">👔</div>
+          <div class="pinfo">
+            <div class="ptag">MEN'S</div>
+            <div class="pname">Classic Formal Shirt</div>
+            <div class="prow">
+              <span class="pprice">৳ 1,200</span>
+              <button class="pbuy">View</button>
+            </div>
+          </div>
+        </div>
+        <div class="pcard" onclick="showProduct('dress')">
+          <div class="pimg" style="background:#f0ebf5;">👗</div>
+          <div class="pinfo">
+            <div class="ptag">WOMEN'S</div>
+            <div class="pname">Summer Dress</div>
+            <div class="prow">
+              <span class="pprice">৳ 1,800</span>
+              <button class="pbuy">View</button>
+            </div>
+          </div>
+        </div>
+        <div class="pcard" onclick="showProduct('jacket')">
+          <div class="pimg" style="background:#ebf0f5;">🧥</div>
+          <div class="pinfo">
+            <div class="ptag">UNISEX</div>
+            <div class="pname">Winter Jacket</div>
+            <div class="prow">
+              <span class="pprice">৳ 3,500</span>
+              <button class="pbuy">View</button>
+            </div>
+          </div>
+        </div>
+        <div class="pcard" onclick="showProduct('jeans')">
+          <div class="pimg" style="background:#ebf5eb;">👖</div>
+          <div class="pinfo">
+            <div class="ptag">MEN'S</div>
+            <div class="pname">Slim Fit Jeans</div>
+            <div class="prow">
+              <span class="pprice">৳ 2,200</span>
+              <button class="pbuy">View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PRODUCT DETAIL PAGE -->
+  <div id="product" class="page">
+    <div class="product-detail">
+      <button class="back-btn" onclick="showPage('buy')"><i class="ti ti-arrow-left"></i> Back</button>
+      <div class="product-big-img" id="productImg">👔</div>
+      <div class="product-detail-info">
+        <div class="ptag" id="productTag">MEN'S</div>
+        <h2 id="productName">Classic Formal Shirt</h2>
+        <p class="product-desc" id="productDesc">A premium quality formal shirt perfect for office and events. Made with soft breathable fabric.</p>
+        <div class="product-price-big" id="productPrice">৳ 1,200</div>
+        <div class="product-actions">
+          <a id="productWhatsapp" href="" class="contact-btn whatsapp" target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Order on WhatsApp
+          </a>
+          <a id="productGmail" href="" class="contact-btn gmail">
+            <i class="ti ti-mail"></i> Order via Gmail
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELL PAGE -->
+  <div id="sell" class="page">
+    <div class="page-header">
+      <h2>Sell Your Product</h2>
+      <p>List your clothing item step by step</p>
+    </div>
+
+    <div class="sell-form">
+      <!-- Step 1: Photo -->
+      <div class="sell-step active" id="step1">
+        <div class="step-indicator">
+          <span class="step-dot active">1</span>
+          <span class="step-line"></span>
+          <span class="step-dot">2</span>
+          <span class="step-line"></span>
+          <span class="step-dot">3</span>
+        </div>
+        <h3>Step 1 — Add Photo</h3>
+        <p class="step-desc">Upload a clear photo of your product</p>
+        <div class="upload-box" id="uploadBox">
+          <i class="ti ti-camera" style="font-size:36px; color:#aaa;"></i>
+          <p>Click to upload photo</p>
+          <small>JPG, PNG supported</small>
+          <input type="file" accept="image/*" id="photoInput" style="display:none" onchange="handlePhoto(this)">
+        </div>
+        <div id="photoPreview" style="display:none;">
+          <img id="previewImg" style="width:100%; max-height:220px; object-fit:cover; border-radius:12px;">
+          <button class="btn-outline" style="margin-top:10px; width:100%;" onclick="document.getElementById('photoInput').click()">Change Photo</button>
+        </div>
+        <button class="btn-primary step-btn" onclick="nextStep(2)">Next →</button>
+      </div>
+
+      <!-- Step 2: Price & Details -->
+      <div class="sell-step" id="step2">
+        <div class="step-indicator">
+          <span class="step-dot done">✓</span>
+          <span class="step-line active"></span>
+          <span class="step-dot active">2</span>
+          <span class="step-line"></span>
+          <span class="step-dot">3</span>
+        </div>
+        <h3>Step 2 — Product Details</h3>
+        <p class="step-desc">Enter your product information</p>
+        <div class="form-group">
+          <label>Product Name</label>
+          <input type="text" id="prodName" placeholder="e.g. Blue Cotton Shirt">
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select id="prodCat">
+            <option>Men's Clothing</option>
+            <option>Women's Clothing</option>
+            <option>Kids Clothing</option>
+            <option>Accessories</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Price (৳)</label>
+          <input type="number" id="prodPrice" placeholder="e.g. 1200">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="prodDesc" placeholder="Describe your product..."></textarea>
+        </div>
+        <div class="step-row">
+          <button class="btn-outline" onclick="nextStep(1)">← Back</button>
+          <button class="btn-primary" onclick="nextStep(3)">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Confirm & Submit -->
+      <div class="sell-step" id="step3">
+        <div class="step-indicator">
+          <span class="step-dot done">✓</span>
+          <span class="step-line active"></span>
+          <span class="step-dot done">✓</span>
+          <span class="step-line active"></span>
+          <span class="step-dot active">3</span>
+        </div>
+        <h3>Step 3 — Confirm & Submit</h3>
+        <p class="step-desc">Review your listing before submitting</p>
+        <div class="preview-card">
+          <div id="confirmImg" style="font-size:48px; text-align:center; padding:20px; background:#f9f9f7; border-radius:10px; margin-bottom:12px;">📷</div>
+          <div class="ptag" id="confirmCat">MEN'S CLOTHING</div>
+          <div class="pname" id="confirmName">Product Name</div>
+          <div class="pprice" id="confirmPrice">৳ 0</div>
+          <p id="confirmDesc" style="font-size:13px; color:#666; margin-top:8px;"></p>
+        </div>
+        <a id="submitWhatsapp" href="" class="contact-btn whatsapp" target="_blank" style="width:100%; justify-content:center; margin-top:16px;">
+          <i class="ti ti-brand-whatsapp"></i> Send to WhatsApp
+        </a>
+        <button class="btn-outline" style="width:100%; margin-top:10px;" onclick="nextStep(1); resetForm();">List Another</button>
+      </div>
+    </div>
   </div>
 
   <footer class="footer">
-    <p class="footer-logo">DHAKA THREADS</p>
-    <p>Dhanmondi, Dhaka &nbsp;•&nbsp; 01700-000000 &nbsp;•&nbsp; info@dhakathreads.com</p>
-    <p class="copy">© 2024 Dhaka Threads. All rights reserved.</p>
+    <p class="footer-logo">SPI ANTOOR</p>
+    <p>Rangpur, Bangladesh</p>
+    <p class="copy">© 2024 SPI ANTOOR. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
