@@ -316,17 +316,22 @@ const style = document.createElement('style');
 style.textContent = '@keyframes shake{0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-6px);}40%,80%{transform:translateX(6px);}}';
 document.head.appendChild(style);
 
-let isLoggedIn=false,authMode='login';
-function openAuth(m){authMode=m;document.getElementById('authTitle').innerText=m==='login'?'Login':'Sign Up';document.getElementById('authModal').style.display='block';}
-function submitAuth(){
- const u=document.getElementById('authUser').value;
- const p=document.getElementById('authPass').value;
- if(authMode==='signup' && p.length<8){alert('Use a strong password (8+ chars)');return;}
- isLoggedIn=true;document.getElementById('authModal').style.display='none';alert('Logged in');
+let currentUser=localStorage.getItem('user');
+function showAuth(){document.getElementById('authModal').style.display='block';}
+function signupUser(){
+ let e=document.getElementById('authEmail').value,p=document.getElementById('authPass').value;
+ if(p.length<8){alert('Password must be at least 8 characters');return;}
+ localStorage.setItem('userData',JSON.stringify({e,p})); alert('Account created');
 }
-function googleLogin(){isLoggedIn=true;document.getElementById('authModal').style.display='none';alert('Google login placeholder');}
-const oldShowPage=showPage;
+function loginUser(){
+ let d=JSON.parse(localStorage.getItem('userData')||'{}');
+ let e=document.getElementById('authEmail').value,p=document.getElementById('authPass').value;
+ if(e===d.e && p===d.p){localStorage.setItem('user','yes'); alert('Logged in'); document.getElementById('authModal').style.display='none';}
+ else alert('Wrong credentials');
+}
+function googleLogin(){alert('Google login requires Firebase setup.');}
+const _showPage=showPage;
 showPage=function(id){
- if((id==='sell'||id==='cart')&&!isLoggedIn){openAuth('login');return;}
- oldShowPage(id);
+ if((id==='buy'||id==='sell'||id==='cart') && !localStorage.getItem('user')){showAuth(); return;}
+ return _showPage(id);
 }
