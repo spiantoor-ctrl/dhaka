@@ -1,272 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPI ANTOOR</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPI ANTOOR'S UNIQUE FASHION</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-left">
-      <button class="icon-btn" id="backBtn" onclick="goBack()" style="display:none;">
-        <i class="ti ti-arrow-left"></i>
-      </button>
-      
-        <button class="menu-btn" id="menuBtn"><i class="ti ti-dots"></i></button>
-        <div class="dropdown" id="dropdown">
-          <a href="#" onclick="showPage('home');return false;"><i class="ti ti-home"></i> Home</a>
-          <a href="#" onclick="showPage('buy');return false;"><i class="ti ti-shopping-bag"></i> Buy</a>
-          <a href="#" onclick="showPage('sell');return false;"><i class="ti ti-tag"></i> Sell</a>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">SPI ANTOOR</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Buy</a>
+            <a href="#">Sell</a>
         </div>
-      </div>
-      
-    </div>
-    <div class="logo" onclick="showPage('home')">SPI ANTOOR</div><div class="auth-links"><button onclick="openAuth('login')">Login</button><button onclick="openAuth('signup')">Sign Up</button></div>
-    <div class="nav-right">
-      <button class="icon-btn" onclick="openSearch()"><i class="ti ti-search"></i></button>
-      <button class="icon-btn cart-btn" onclick="showPage('cart')">
-        <i class="ti ti-shopping-cart"></i>
-        <span class="cart-count" id="cartCount" style="display:none;">0</span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- SEARCH OVERLAY -->
-  <div class="search-overlay" id="searchOverlay">
-    <div class="search-bar">
-      <i class="ti ti-search"></i>
-      <input type="text" id="searchInput" placeholder="Search products..." oninput="doSearch(this.value)">
-      <button onclick="closeSearch()"><i class="ti ti-x"></i></button>
-    </div>
-    <div class="search-results" id="searchResults"></div>
-  </div>
-
-  <!-- HOME -->
-  <div id="home" class="page active">
-    <div class="hero" style="background-image:url('shop-bg.png');">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="badge anim-fade-up" style="animation-delay:0s">CLOTHING & FASHION</div>
-        <h1 class="anim-fade-up" style="animation-delay:0.15s">WELCOME TO<br>SPI ANTOOR'S<br>UNIQUE FASHION</h1>
-        <p class="anim-fade-up" style="animation-delay:0.3s">Premium fashion from Rangpur.<br>Quality you can trust.</p>
-        <div class="hero-btns anim-fade-up" style="animation-delay:0.45s">
-          <button class="btn-white" onclick="showPage('buy')">Shop Now</button>
-          <button class="btn-ghost" onclick="showPage('sell')">Sell with Us</button>
+        <div class="auth-buttons">
+            <button id="loginBtn" onclick="openModal('loginModal')">Login</button>
+            <button id="signupBtn" onclick="openModal('signupModal')">Signup</button>
         </div>
-      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="subtitle">CLOTHING & FASHION</div>
+            <h1>WELCOME TO<br>SPI ANTOOR'S<br>UNIQUE FASHION</h1>
+            <p>Premium fashion from Rangpur.<br>Quality you can trust.</p>
+        </div>
     </div>
-    <section class="about-section">
-      <div class="about-card scroll-reveal">
-        <div class="about-avatar"><img src="avatar.jpg" alt="SPI ANTOOR"></div>
-        <div class="about-info">
-          <h2>SPI ANTOOR</h2>
-          <p class="about-location"><i class="ti ti-map-pin"></i> Rangpur, Bangladesh</p>
-          <p class="about-desc">Fashion enthusiast & trusted seller from Rangpur. Bringing you the best clothing & fashion with guaranteed quality.</p>
-          <div class="contact-row">
-            <a href="https://wa.me/8801704310629" class="contact-btn whatsapp" target="_blank"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
-            <a href="mailto:spiantoor@gmail.com" class="contact-btn gmail"><i class="ti ti-mail"></i> Gmail</a>
-          </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('loginModal')">&times;</span>
+            <h3>Login</h3>
+            <form onsubmit="event.preventDefault(); alert('Login feature will be connected to database soon!');">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
         </div>
-      </div>
-    </section>
-    <div class="strip">
-      <div class="feat scroll-reveal" style="--d:0s"><i class="ti ti-truck"></i><div><p>Fast Delivery</p><small>All over Bangladesh</small></div></div>
-      <div class="feat scroll-reveal" style="--d:0.1s"><i class="ti ti-shield-check"></i><div><p>100% Genuine</p><small>Quality assured</small></div></div>
-      <div class="feat scroll-reveal" style="--d:0.2s"><i class="ti ti-refresh"></i><div><p>Easy Returns</p><small>3 Days Return</small><small>7-day policy</small></div></div>
-      <div class="feat scroll-reveal" style="--d:0.3s"><i class="ti ti-headset"></i><div><p>24/7 Support</p><small>Always here</small></div></div>
     </div>
-  </div>
 
-  <!-- BUY -->
-  <div id="buy" class="page">
-    <div class="page-header anim-slide-down"><h2>Browse Products</h2><p>Find your perfect style</p></div>
-    <section class="section"><div class="products" id="productGrid"></div></section>
-  </div>
-
-  <!-- PRODUCT DETAIL -->
-  <div id="product" class="page">
-    <div class="product-detail anim-fade-up">
-      <div class="product-big-img" id="productImg"></div>
-      <div class="product-detail-info">
-        <div class="ptag" id="productTag"></div>
-        <h2 id="productName"></h2>
-        <p class="product-desc" id="productDesc"></p>
-        <div class="product-price-big" id="productPrice"></div>
-        <div class="product-actions">
-          <button class="btn-add-cart" id="addToCartBtn" onclick="addToCart()"><i class="ti ti-shopping-cart"></i> Add to Cart</button>
-          <button class="btn-buy-now" onclick="startBuy()"><i class="ti ti-bolt"></i> Buy Now</button>
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('signupModal')">&times;</span>
+            <h3>Signup / Register</h3>
+            <form onsubmit="event.preventDefault(); alert('Registration feature will be connected to database soon!');">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!-- PAYMENT -->
-  <div id="payment" class="page">
-    <div class="page-header anim-slide-down"><h2>Choose Payment</h2><p>Select your payment method</p></div>
-    <div class="payment-section">
-      <div class="payment-item scroll-reveal" style="--d:0s" onclick="selectPayment('bkash')">
-        <div class="pay-logo bkash-logo">bKash</div>
-        <div class="pay-info"><p>bKash Mobile Banking</p><small>Send money instantly</small></div>
-        <i class="ti ti-chevron-right"></i>
-      </div>
-      <div class="payment-item scroll-reveal" style="--d:0.1s" onclick="selectPayment('nagad')">
-        <div class="pay-logo nagad-logo">Nagad</div>
-        <div class="pay-info"><p>Nagad Mobile Banking</p><small>Fast & secure</small></div>
-        <i class="ti ti-chevron-right"></i>
-      </div>
-      <div class="payment-item scroll-reveal" style="--d:0.2s" onclick="selectPayment('rocket')">
-        <div class="pay-logo rocket-logo">Rocket</div>
-        <div class="pay-info"><p>Rocket Mobile Banking</p><small>Dutch Bangla Bank</small></div>
-        <i class="ti ti-chevron-right"></i>
-      </div>
-      <div class="payment-item scroll-reveal" style="--d:0.3s" onclick="selectPayment('cod')">
-        <div class="pay-logo cod-logo"><i class="ti ti-cash"></i></div>
-        <div class="pay-info"><p>Cash on Delivery</p><small>Pay when you receive</small></div>
-        <i class="ti ti-chevron-right"></i>
-      </div>
-    </div>
-  </div>
-
-  <!-- TRANSACTION -->
-  <div id="transaction" class="page">
-    <div class="page-header anim-slide-down"><h2 id="transTitle">Payment</h2><p>Send money and submit proof</p></div>
-    <div class="trans-section anim-fade-up">
-      <div class="account-box" id="accountBox"></div>
-      <div class="trans-steps">
-        <div class="trans-step"><span class="t-num">1</span><p id="transStep1"></p></div>
-        <div class="trans-step"><span class="t-num">2</span><p>Send exactly <strong id="transAmount"></strong></p></div>
-        <div class="trans-step"><span class="t-num">3</span><p>Enter Transaction ID or upload screenshot</p></div>
-      </div>
-      <div class="form-group"><label>Transaction ID</label><input type="text" id="transId" placeholder="e.g. 8N7A3K2X1M"></div>
-      <div class="form-group">
-        <label>Screenshot (optional)</label>
-        <div class="upload-box" id="transUploadBox"><i class="ti ti-camera" style="font-size:28px;color:#aaa;"></i><p>Click to upload screenshot</p><input type="file" accept="image/*" id="transPhoto" style="display:none" onchange="handleTransPhoto(this)"></div>
-        <div id="transPhotoPreview" style="display:none;"><img id="transPreviewImg" style="width:100%;max-height:180px;object-fit:cover;border-radius:10px;"></div>
-      </div>
-      <button class="step-btn" onclick="submitOrder()">Submit Order</button>
-    </div>
-  </div>
-
-  <!-- COD -->
-  <div id="cod" class="page">
-    <div class="page-header anim-slide-down"><h2>Cash on Delivery</h2><p>Fill in your details</p></div>
-    <div class="trans-section anim-fade-up">
-      <div class="form-group"><label>Full Name</label><input type="text" id="codName" placeholder="Your name"></div>
-      <div class="form-group"><label>Phone Number</label><input type="text" id="codPhone" placeholder="01XXXXXXXXX"></div>
-      <div class="form-group"><label>Address</label><textarea id="codAddress" placeholder="Your full delivery address..."></textarea></div>
-      <button class="step-btn" onclick="submitCOD()">Confirm Order</button>
-    </div>
-  </div>
-
-  <!-- SUCCESS -->
-  <div id="success" class="page">
-    <div class="success-page anim-pop">
-      <div class="success-icon">🎉</div>
-      <h2>Order Submitted!</h2>
-      <p id="successMsg"></p>
-      <div class="success-product" id="successProduct"></div>
-      <button class="step-btn" onclick="showPage('home')" style="margin-top:20px;">Back to Home</button>
-    </div>
-  </div>
-
-  <!-- CART -->
-  <div id="cart" class="page">
-    <div class="page-header anim-slide-down"><h2>My Cart</h2><p id="cartSubtitle">0 items</p></div>
-    <div class="section" id="cartItems"></div>
-    <div class="cart-footer" id="cartFooter" style="display:none;">
-      <div class="cart-total"><span>Total</span><strong id="cartTotal">৳ 0</strong></div>
-      <button class="step-btn" onclick="checkoutCart()">Proceed to Payment</button>
-    </div>
-  </div>
-
-  <!-- SELL -->
-  <div id="sell" class="page">
-    <div class="page-header anim-slide-down"><h2>Sell Your Product</h2><p>List your item step by step</p></div>
-    <div class="sell-form">
-
-      <div class="sell-step active" id="step1">
-        <div class="step-indicator">
-          <span class="step-dot active">1</span><span class="step-line"></span>
-          <span class="step-dot">2</span><span class="step-line"></span>
-          <span class="step-dot">3</span>
-        </div>
-        <h3>Step 1 — Add Photo</h3>
-        <p class="step-desc">Upload a clear photo of your product</p>
-        <div class="upload-box" id="sellUploadBox">
-          <i class="ti ti-camera" style="font-size:36px;color:#aaa;"></i>
-          <p>Click to upload photo</p><small>JPG, PNG supported</small>
-          <input type="file" accept="image/*" id="sellPhoto" style="display:none" onchange="handleSellPhoto(this)">
-        </div>
-        <div id="sellPhotoPreview" style="display:none;">
-          <img id="sellPreviewImg" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          <button class="btn-outline-dark" style="margin-top:10px;width:100%;" onclick="document.getElementById('sellPhoto').click()">Change Photo</button>
-        </div>
-        <button class="step-btn" style="margin-top:16px;" onclick="sellNext(1)">Next →</button>
-      </div>
-
-      <div class="sell-step" id="step2">
-        <div class="step-indicator">
-          <span class="step-dot done">✓</span><span class="step-line active"></span>
-          <span class="step-dot active">2</span><span class="step-line"></span>
-          <span class="step-dot">3</span>
-        </div>
-        <h3>Step 2 — Product & Your Details</h3>
-        <p class="step-desc">Tell us about the product and yourself</p>
-        <div class="form-group"><label>Product Name *</label><input type="text" id="sellName" placeholder="e.g. Blue Cotton Shirt"></div>
-        <div class="form-group"><label>Category</label>
-          <select id="sellCat"><option>Men's Clothing</option><option>Women's Clothing</option><option>Kids Clothing</option><option>Accessories</option></select>
-        </div>
-        <div class="form-group"><label>Price (৳) *</label><input type="number" id="sellPrice" placeholder="e.g. 1200"></div>
-        <div class="form-group"><label>Description</label><textarea id="sellDesc" placeholder="Describe your product..."></textarea></div>
-        <div class="form-group"><label>Your Name *</label><input type="text" id="sellerName" placeholder="Your full name"></div>
-        <div class="form-group"><label>Your Phone *</label><input type="text" id="sellerPhone" placeholder="01XXXXXXXXX"></div>
-        <div class="form-group"><label>Your Email</label><input type="email" id="sellerEmail" placeholder="you@email.com"></div>
-        <div class="step-row">
-          <button class="btn-outline-dark" onclick="sellGoTo(1)">← Back</button>
-          <button class="btn-dark" onclick="sellNext(2)">Next →</button>
-        </div>
-      </div>
-
-      <div class="sell-step" id="step3">
-        <div class="step-indicator">
-          <span class="step-dot done">✓</span><span class="step-line active"></span>
-          <span class="step-dot done">✓</span><span class="step-line active"></span>
-          <span class="step-dot active">3</span>
-        </div>
-        <h3>Step 3 — Payment Numbers</h3>
-        <p class="step-desc">Buyers will send money to these numbers</p>
-        <div class="form-group"><label><span class="pay-tag bkash-tag">bKash</span> Number</label><input type="text" id="sellerBkash" placeholder="01XXXXXXXXX"></div>
-        <div class="form-group"><label><span class="pay-tag nagad-tag">Nagad</span> Number</label><input type="text" id="sellerNagad" placeholder="01XXXXXXXXX"></div>
-        <div class="form-group"><label><span class="pay-tag rocket-tag">Rocket</span> Number</label><input type="text" id="sellerRocket" placeholder="01XXXXXXXXX"></div>
-        <div class="preview-card" id="sellPreviewCard"></div>
-        <div class="step-row" style="margin-top:14px;">
-          <button class="btn-outline-dark" onclick="sellGoTo(2)">← Back</button>
-          <button class="btn-dark" onclick="submitSell()">Submit Listing ✓</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <footer class="footer">
-    <p class="footer-logo">SPI ANTOOR</p>
-    <p>Rangpur, Bangladesh</p>
-    <p class="copy">© 2024 SPI ANTOOR. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-
-<div id="authModal" class="auth-modal" style="display:none">
-<div class="auth-box">
-<h3 id="authTitle">Login</h3>
-<input id="authUser" placeholder="Email or Phone">
-<input id="authPass" type="password" placeholder="Strong Password">
-<button onclick="submitAuth()">Continue</button>
-<button onclick="googleLogin()">Google Login</button>
-</div></div>
-
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
